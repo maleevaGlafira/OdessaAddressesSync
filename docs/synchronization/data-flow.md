@@ -18,8 +18,7 @@ Firebird S_VIDUL ──┐
                    ├─→ сравнение
 Firebird S_ULIC ───┘
 
-
-s_vidul.dom - → записать в Firebird 
+s_dom.csv → S_OPUTERHOUSES → Firebird
 ```
  
 ## Этапы
