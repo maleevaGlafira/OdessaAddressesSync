@@ -104,16 +104,16 @@ _Планирую создать_
 |------|-----|------|------------|---------------|
 | id | integer| NO | Уникальный идентификатор | Используется |
 | id_etalon | integer| NO | ID в таблице эталоне | Используется |
-| name_etalon | VARCHAR(200)| NO | имя укр в таблице эталоне | Используется |
+| name_etalon | VARCHAR(200)| NO |Украинское название объекта в эталонной базе | Используется |
 | fk_vid_etalon | integer| YES | ID типа улицы в таблице эталоне | Используется |
-| id_connect | integer| YES | ID в таблице c которой сводим | Используется |
-| key_connect| char(1) | YES | символьный ключ если такой есть в таблице c которой сводим
-| name_connect | VARCHAR(200)| NO | имя укр в таблице c которой сводим | Используется |
-| fk_vid_connect | integer | YES | ID типа улицы в таблице c которой сводим | Используется |
-| fk_vid_keyconnect | char(1) | YES | ID типа улицы в таблице c которой сводим | Используется |
-| fk_obj_etalon | integer | NO | ID типа объекта эталона
-| fk_obj_connect | integer | NO | ID типа объекта c которым сводим
-| DEL | char(1) | NO | Признак активности | Если тип активен — "-" иначе d |
+| id_connect | integer| YES | Числовой внешний ключ объекта | Используется |
+| key_connect| char(1) | YES | символьный внешний ключ объекта |
+| name_connect | VARCHAR(200)| NO | Украинское название объекта во внешнем источнике | Используется |
+| fk_vid_connect | integer | YES | Дополнительный ключ типа объекта во внешнем источнике | Используется |
+| fk_vid_keyconnect | char(1) | YES | Символьный внешний код типа объекта | Используется |
+| fk_obj_etalon | integer | NO | ID Типа объекта эталонной базы
+| fk_obj_connect | integer | NO | ID Тип объекта внешнего источника
+| DEL | char(1) | YES | Признак активности | Если тип активен — "-" иначе d |
 
 - `ID` — первичный ключ.
 - `id_etalon` + `fk_obj_etalon` + `fk_obj_connect` - уникально
@@ -134,18 +134,19 @@ _Планирую создать_
 
 Пример связи для улиц
 
-`S_SVED.id_etalon → S_ULIC.id`
-`S_SVED.fk_vid_etalon → S_ULIC.ID_VIDUL`
-`S_SVED.name_etalon → S_ULIC.NAME_UA`
-`S_SVED.id_etid_connect → S_INPUT_ULIC.EXT_ID`
-`S_SVED.fk_vid_keyconnect ` →`S_INPUT_ULIC.EXT_TYPE_ID`
-`S_SVED.name_connect → S_US_INPUT_ULICLIC.NAME`
+- `S_SVED.ID_ETALON` → `S_ULIC.ID`
+- `S_SVED.FK_VID_ETALON` → `S_ULIC.ID_VIDUL`
+- `S_SVED.NAME_ETALON` → `S_ULIC.NAME_UA`
+- `S_SVED.ID_CONNECT` → `S_INPUT_ULIC.EXT_ID`
+- `S_SVED.FK_VID_KEYCONNECT` → `S_INPUT_ULIC.EXT_TYPE_ID`
+- `S_SVED.NAME_CONNECT` → `S_INPUT_ULIC.NAME`
 
 Для типов улиц
-`S_SVED.id_etalon → S_VIDUL.id`
-`S_SVED.name_etalon → S_ULIC.NAME_UA`
-`S_SVED.key_connect → S_INPUT_VIDUL.EXT_ID`
-`S_SVED.name_connect → S_INPUT_VIDUL.SHORT_NAME`
+- `S_SVED.ID_ETALON` → `S_VIDUL.ID`
+- `S_SVED.NAME_ETALON` → `S_VIDUL.NAME_UA`
+- `S_SVED.KEY_CONNECT` → `S_INPUT_VIDUL.EXT_ID`
+- `S_SVED.NAME_CONNECT` → `S_INPUT_VIDUL.SHORT_NAME`
+
 
 
 
