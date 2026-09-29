@@ -77,9 +77,9 @@ s_dom.csv → S_DOM_EXT → Firebird
 
    Для каждой записи сохраняются:
 
-   * `EXT_ID` — внешний код типа улицы;
-   * `NAME` — полное название;
-   * `SHORT_NAME` — сокращённое название.
+   * `EXT_ID` — s_vidul.csv.`код типу вулиці`;
+   * `NAME` — s_vidul.csv.`назва типу вулиці`;
+   * `SHORT_NAME` — s_vidul.csv.`скорочена назва типу вулиці` .
 
    * `LOAD.ID ` - S_INPUT_LOAD.ID из шага 3
 
