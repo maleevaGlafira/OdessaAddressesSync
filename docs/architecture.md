@@ -22,3 +22,16 @@
 
 cvs файлы — внешний источник данных адресного плана.
 
+# Технологический стек
+
+- Frontend: Vue.js + Vite
+- Backend: Node.js + Fastify
+- API: REST
+- Database: Firebird
+- Frontend ↔ Backend: HTTP/JSON
+Запуск: один Node.js сервер; после сборки frontend статические файлы Vue отдаёт тот же сервер.
+
+Vue.js используется для пользовательского интерфейса.
+Node.js + Fastify используется для серверной части, обработки CSV, бизнес-логики и работы с Firebird.
+Frontend и backend являются частями одного приложения и находятся в одном репозитории. После сборки frontend обслуживается Node.js сервером.
+
